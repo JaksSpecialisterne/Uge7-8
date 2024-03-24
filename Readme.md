@@ -17,3 +17,8 @@ Log in, would simple use the terminal to check if the username and password woul
 Transaction: Would have been called from the ChangeStockAmount() function in the Item class and would have simple added a transaction object to the database like the item and category currently does.
 The printing would simply have used the terminal to dertime the timeframe for which to print and the queried the database for timestamps that fits the given range and returned them, finally printing them to screen.
 
+## Handling removed categories
+When removing categories it could create a problem, as the Item table has a foreign key to categories, i thought of 3 solution whic could be implemented to fix this. The first was a suggestion of just having a default "None" categories that would replaces the removed categories of all items. This would simply use the update methods for items to change that after a query on all items on the old id.
+The second solution was to prompt user to select another category to switch all items to.
+And the third solution was to prompt the user to make a new category for all items to switch to.
+I think i would have gone with 1st and 2nd and then allowing them to do either as they see fit. 
